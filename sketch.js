@@ -8,7 +8,7 @@ var world;
 var radius = 40;
 
 function setup() {
-	createCanvas(600,250);
+	createCanvas(1500,800);
 	rectMode(CENTER);
 	//crear los cuerpos aquí.
 	engine = Engine.create();
@@ -26,9 +26,10 @@ function setup() {
 	
 	groundObj= new Ground(width/2,670,width,20);
   	leftSide = new Ground(1100,600,20,120);
-  	rightSide = new Ground(10,200,20,400);
+  	rightSide = new Ground(1100,200,20,400);
 	
 	Engine.run(engine);
+	
 }
 
 
@@ -38,8 +39,10 @@ function draw() {
  	
 	ellipse(ball.position.x,ball.position.y,radius,radius);
   	
-  	
-
+	
+	rightSide.display();
+	groundObj.display();
+	leftSide.display();
 }
 
 function keyPressed() {
